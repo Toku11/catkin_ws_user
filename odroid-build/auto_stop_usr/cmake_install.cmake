@@ -1,8 +1,8 @@
-# Install script for directory: /home/zargol/catkin_ws_user/src/auto_stop
+# Install script for directory: /home/fatoks/catkin_ws_user/src/auto_stop
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/zargol/catkin_ws_user/odroid-install")
+  SET(CMAKE_INSTALL_PREFIX "/home/fatoks/catkin_ws_user/odroid-install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -44,89 +44,89 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/zargol/catkin_ws_user/odroid-install/_setup_util.py")
+   "/home/fatoks/catkin_ws_user/odroid-install/_setup_util.py")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/zargol/catkin_ws_user/odroid-install" TYPE PROGRAM FILES "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/_setup_util.py")
+FILE(INSTALL DESTINATION "/home/fatoks/catkin_ws_user/odroid-install" TYPE PROGRAM FILES "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/_setup_util.py")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/zargol/catkin_ws_user/odroid-install/env.sh")
+   "/home/fatoks/catkin_ws_user/odroid-install/env.sh")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/zargol/catkin_ws_user/odroid-install" TYPE PROGRAM FILES "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/env.sh")
+FILE(INSTALL DESTINATION "/home/fatoks/catkin_ws_user/odroid-install" TYPE PROGRAM FILES "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/env.sh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/zargol/catkin_ws_user/odroid-install/setup.bash")
+   "/home/fatoks/catkin_ws_user/odroid-install/setup.bash")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/zargol/catkin_ws_user/odroid-install" TYPE FILE FILES "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/setup.bash")
+FILE(INSTALL DESTINATION "/home/fatoks/catkin_ws_user/odroid-install" TYPE FILE FILES "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/setup.bash")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/zargol/catkin_ws_user/odroid-install/setup.sh")
+   "/home/fatoks/catkin_ws_user/odroid-install/setup.sh")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/zargol/catkin_ws_user/odroid-install" TYPE FILE FILES "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/setup.sh")
+FILE(INSTALL DESTINATION "/home/fatoks/catkin_ws_user/odroid-install" TYPE FILE FILES "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/setup.sh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/zargol/catkin_ws_user/odroid-install/setup.zsh")
+   "/home/fatoks/catkin_ws_user/odroid-install/setup.zsh")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/zargol/catkin_ws_user/odroid-install" TYPE FILE FILES "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/setup.zsh")
+FILE(INSTALL DESTINATION "/home/fatoks/catkin_ws_user/odroid-install" TYPE FILE FILES "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/setup.zsh")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/zargol/catkin_ws_user/odroid-install/.rosinstall")
+   "/home/fatoks/catkin_ws_user/odroid-install/.rosinstall")
   IF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
   IF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   ENDIF (CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
-FILE(INSTALL DESTINATION "/home/zargol/catkin_ws_user/odroid-install" TYPE FILE FILES "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/.rosinstall")
+FILE(INSTALL DESTINATION "/home/fatoks/catkin_ws_user/odroid-install" TYPE FILE FILES "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/.rosinstall")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/auto_stop_usr.pc")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/auto_stop_usr.pc")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_stop_usr/cmake" TYPE FILE FILES
-    "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/auto_stop_usrConfig.cmake"
-    "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/auto_stop_usrConfig-version.cmake"
+    "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/auto_stop_usrConfig.cmake"
+    "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/catkin_generated/installspace/auto_stop_usrConfig-version.cmake"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_stop_usr" TYPE FILE FILES "/home/zargol/catkin_ws_user/src/auto_stop/package.xml")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_stop_usr" TYPE FILE FILES "/home/fatoks/catkin_ws_user/src/auto_stop/package.xml")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -136,7 +136,7 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/auto_stop_usr/auto_stop_node"
          RPATH "")
   ENDIF()
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/auto_stop_usr" TYPE EXECUTABLE FILES "/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/auto_stop_usr" TYPE EXECUTABLE FILES "/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node")
   IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/auto_stop_usr/auto_stop_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/auto_stop_usr/auto_stop_node")
     FILE(RPATH_REMOVE
@@ -148,12 +148,12 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_stop_usr" TYPE DIRECTORY FILES "/home/zargol/catkin_ws_user/src/auto_stop/launch" USE_SOURCE_PERMISSIONS)
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/auto_stop_usr" TYPE DIRECTORY FILES "/home/fatoks/catkin_ws_user/src/auto_stop/launch" USE_SOURCE_PERMISSIONS)
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/gtest/cmake_install.cmake")
+  INCLUDE("/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/gtest/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
@@ -163,7 +163,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

@@ -1,6 +1,6 @@
-devel_space: /home/zargol/catkin_ws_user/odroid-devel
+devel_space: /home/fatoks/catkin_ws_user/odroid-devel
 install: true
-install_space: /home/zargol/catkin_ws_user/odroid-install
+install_space: /home/fatoks/catkin_ws_user/odroid-install
 profile: odroid
-source_space: /home/zargol/catkin_ws_user/src
-workspace: /home/zargol/catkin_ws_user
+source_space: /home/fatoks/catkin_ws_user/src
+workspace: /home/fatoks/catkin_ws_user

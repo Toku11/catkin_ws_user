@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zargol/catkin_ws_user/src/auto_stop
+CMAKE_SOURCE_DIR = /home/fatoks/catkin_ws_user/src/auto_stop
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr
+CMAKE_BINARY_DIR = /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -120,9 +120,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -174,19 +174,6 @@ clean_test_results: cmake_check_build_system
 clean_test_results/fast:
 	$(MAKE) -f CMakeFiles/clean_test_results.dir/build.make CMakeFiles/clean_test_results.dir/build
 .PHONY : clean_test_results/fast
-
-#=============================================================================
-# Target rules for targets named clean_test_results_auto_stop_usr
-
-# Build rule for target.
-clean_test_results_auto_stop_usr: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_auto_stop_usr
-.PHONY : clean_test_results_auto_stop_usr
-
-# fast build rule for target.
-clean_test_results_auto_stop_usr/fast:
-	$(MAKE) -f CMakeFiles/clean_test_results_auto_stop_usr.dir/build.make CMakeFiles/clean_test_results_auto_stop_usr.dir/build
-.PHONY : clean_test_results_auto_stop_usr/fast
 
 #=============================================================================
 # Target rules for targets named download_extra_data
@@ -493,7 +480,6 @@ help:
 	@echo "... depend"
 	@echo "... auto_stop_node"
 	@echo "... clean_test_results"
-	@echo "... clean_test_results_auto_stop_usr"
 	@echo "... download_extra_data"
 	@echo "... doxygen"
 	@echo "... edit_cache"

@@ -1,4 +1,12 @@
 <launch>
+
+<include file="$(find motor_communication_usr)/launch/motor_odroid.launch"/>
+<include file="$(find send_steering_light_usr)/launch/servo_light_odroid.launch"/>
+<include file="$(find rplidar_ros_usr)/launch/rplidar.launch"/>
+ <node pkg="heading_usr" type="heading_usr_node" name="heading_usr_node" output="screen">
+    <param name="arduino_serial_port" value="/dev/ttyUSB3" />
+    <param name="arduino_baud_rate" value="115200" /> 
+  </node>
 	<node pkg="joy" type="joy_node" name="joyy_node" output="screen">	
 	</node>
 	<node pkg="gamepad" type="gamepad_node" name="gamepad_node" output="screen">	

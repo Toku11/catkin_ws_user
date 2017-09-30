@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zargol/catkin_ws_user/src/auto_stop
+CMAKE_SOURCE_DIR = /home/fatoks/catkin_ws_user/src/auto_stop
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr
+CMAKE_BINARY_DIR = /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr
 
 # Utility rule file for run_tests.
 
@@ -60,6 +60,6 @@ CMakeFiles/run_tests.dir/clean:
 .PHONY : CMakeFiles/run_tests.dir/clean
 
 CMakeFiles/run_tests.dir/depend:
-	cd /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zargol/catkin_ws_user/src/auto_stop /home/zargol/catkin_ws_user/src/auto_stop /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fatoks/catkin_ws_user/src/auto_stop /home/fatoks/catkin_ws_user/src/auto_stop /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles/run_tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/run_tests.dir/depend
 

@@ -11,7 +11,6 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   geometry_msgs
 )
-find_package(Boost REQUIRED COMPONENTS system thread)
 
 catkin_package(
 	LIBRARIES ${PROJECT_NAME}
@@ -124,7 +123,7 @@ catkin_package(
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
-include_directories(... ${Boost_INCLUDE_DIRS})
+
 ## Declare a C++ library
 # add_library(test_model_car
 #   src/${PROJECT_NAME}/test_model_car.cpp

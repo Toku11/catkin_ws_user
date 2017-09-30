@@ -12,13 +12,13 @@ import util
 
 class CMT(object):
 
-	DETECTOR = 'BRISK'
-	DESCRIPTOR = 'BRISK'
+	DETECTOR = 'BRISK'#'BRISK'
+	DESCRIPTOR = 'BRISK'#'FREAK'#'BRISK'
 	DESC_LENGTH = 512
 	MATCHER = 'BruteForce-Hamming'
-	THR_OUTLIER = 20
-	THR_CONF = 0.75
-	THR_RATIO = 0.8
+	THR_OUTLIER = 20#20
+	THR_CONF = 0.75#0.75
+	THR_RATIO = 0.8#0.8
 
 	estimate_scale = True
 	estimate_rotation = True

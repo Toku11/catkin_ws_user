@@ -1,0 +1,12 @@
+<launch>
+	
+<include file="$(find motor_communication_usr)/launch/motor_odroid.launch"/>
+<include file="$(find send_steering_light_usr)/launch/servo_light_odroid.launch"/>
+<include file="$(find rplidar_ros_usr)/launch/rplidar.launch"/>
+<node pkg="joy" type="joy_node" name="joy_node" output="screen">	
+	</node>
+
+
+
+	
+</launch>

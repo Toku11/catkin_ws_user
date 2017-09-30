@@ -1,14 +1,34 @@
 <launch>    
-    <include file="$(find motor_communication_usr)/launch/motor_odroid.launch"/>
-    <!--<include file="$(find send_steering)/launch/servo_odroid.launch"/>-->
-    <include file="$(find send_steering_light)/launch/servo_light_odroid.launch"/>
-    <include file="$(find realsense_camera)/launch/realsense_sr300.launch"/>
-    <include file="$(find rplidar_ros)/launch/rplidar.launch"/>
     
-    <!--<include file="$(find light)/launch/light.launch"/>-->
-    <include file="$(find heading)/launch/heading_odroid.launch"/>
-    <!--<include file="$(find lane_detect_python)/launch/lane_detect_launch.launch"/>-->
-    <!--<include file="$(find lane_follow)/launch/test_model.launch"/>-->
     <node pkg="odometry_usr" type="odometry_usr_node" name="odometry_usr_node" output="screen">
+
+		<!--<param name="posx"		type="double" 		value="" />
+	  	<param name="posy"		type="double" 		value="35"/>		
+	  	<param name="angle"		type="double"		value="90"/>-->
+
+
+		<param name="posx"		type="double" 		value="1.05" />
+	  	<param name="posy"		type="double" 		value="5.39"/>		
+	  	<param name="angle"		type="double"		value="87"/>
+
+		<!--<param name="posx"		type="double" 		value="-3.54" />
+	  	<param name="posy"		type="double" 		value="0"/>		
+	  	<param name="angle"		type="double"		value="177"/>-->
+
+
+		<!--<param name="posx"		type="double" 		value="-5.45" />
+	  	<param name="posy"		type="double" 		value="1.05"/>		
+	  	<param name="angle"		type="double"		value="-93"/>-->
+
+		<!--<param name="posx"		type="double" 		value="3.28" />
+	  	<param name="posy"		type="double" 		value="0"/>		
+	  	<param name="angle"		type="double"		value="0"/>-->
+
+		<!--<param name="posx"		type="double" 		value="3.28" />
+	  	<param name="posy"		type="double" 		value="0"/>		
+	  	<param name="angle"		type="double"		value="0"/>-->
+
+
+
     </node>
 </launch>

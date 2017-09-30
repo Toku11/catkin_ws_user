@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="send_steering_light_usr" type="send_steering_light_usr_node" name="send_steering_light_usr" output="screen">
+    <param name="arduino_serial_port" value="/dev/ttyUSB3" />
+    <param name="arduino_baud_rate" value="115200" />
+  </node>
+</launch>

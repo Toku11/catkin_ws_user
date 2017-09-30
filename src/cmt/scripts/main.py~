@@ -16,6 +16,10 @@ import CMT
 import numpy as np
 import util
 import math
+import tf
+# Messages
+from nav_msgs.msg import Odometry
+from geometry_msgs.msg import Point, Quaternion
 
 def rigid_transform_3D(A, B):
   #print 'Llamado'
@@ -79,8 +83,10 @@ def rotationMatrixToEulerAngles(R) :
 
 class image_converter:
 
+
   def __init__(self):
     self.image_pub = rospy.Publisher("image_topic_2",Image,queue_size=1)
+    self.vis_odo_pub = rospy.Publisher("visual_odometry",Odometry,queue_size=1)
     self.bridge = CvBridge()
     #self.image_sub = rospy.Subscriber("/usb_cam/image_raw",Image,self.callback)
     self.image_sub = rospy.Subscriber("/ocam/image_raw",Image,self.callback,queue_size=1)
@@ -94,14 +100,15 @@ class image_converter:
     self.pause_time = 10
     ###########################Primer Region
     
-    im0 = cv2.imread('./frame_cap_m.jpg', flags=cv2.IMREAD_GRAYSCALE)
+    #im0 = cv2.imread('./frame_cap_noche.jpg', flags=cv2.IMREAD_GRAYSCALE)
+    im0 = cv2.imread('./frame_cap_11.jpg', flags=cv2.IMREAD_GRAYSCALE)
     #im0 = cv2.imread('./frame_cap3.jpg', flags=cv2.IMREAD_GRAYSCALE)#flags=cv2.IMREAD_GRAYSCALE)
     #im0 = cv2.imread('/home/sergio/catikin_ws_user/src/cmt/scripts/frame.jpg', flags=cv2.IMREAD_COLOR)
     #im0 = cv2.imread('/home/sergio/catikin_ws_user/src/cmt/scripts/frame.jpg',flags=cv2.IMREAD_GRAYSCALE)
     #cv2.imshow('im0', im0)
     #im_gray0 = cv2.cvtColor(im0, cv2.COLOR_BGR2GRAY)
     im_gray0=im0
-    im_draw = np.copy(im0)
+    #im_draw = np.copy(im0)
     print('Selecciona Primer Region')
     #tl=(84, 55) #talvez
     #br=(557, 307#tal vez
@@ -109,22 +116,33 @@ class image_converter:
     #br=(544, 316)
     #tl=(35,35)
     #bl=(605,325)
-    tl=(78, 59) 
-    br=(553, 297)
+    #tl=(78, 59) #ultimos con156kp
+    #br=(553, 297)#uktimos con 156kp
+    tl=(73, 56)
+    br=(449, 244)
 
-    (tl, br) = util.get_rect(im_draw)
+
+    #(tl, br) = util.get_rect(im_gray0)
     print('usando %i, %i como init bb', tl, br)
     self.CRT.initialise(im_gray0, tl, br)
+    print('Num keypoint init',self.CRT.num_initial_keypoints)
     self.frame = 1
     self.conta=0
+
+
+    self.frame_id = 'visual_odometry'
+    self.child_frame_id = 'base_link2'
+    self.msg = Odometry()
+    # Covariance
+    #P = np.mat(np.diag([0.0]*3))
     
 
 
 
   def callback(self,data):
     try:
-        tic = time.time()
-        im_gray = self.bridge.imgmsg_to_cv2(data, "bgr8")
+        #tic = time.time()
+        im_gray = self.bridge.imgmsg_to_cv2(data, "mono8")
   
         # Read image
         #status, im = cap.read()
@@ -141,7 +159,7 @@ class image_converter:
         # Display results
 
         # Draw updated estimate
-        if self.CRT.has_result:
+        if self.CRT.has_result and self.CRT.active_keypoints.shape[0]>self.CRT.num_initial_keypoints*0.20:
           #cv2.line(im_gray, self.CRT.tl, self.CRT.tr, (255, 0, 0), 4)
           #cv2.line(im_gray, self.CRT.tr, self.CRT.br, (255, 0, 0), 4)
           #cv2.line(im_gray, self.CRT.br, self.CRT.bl, (255, 0, 0), 4)
@@ -151,9 +169,10 @@ class image_converter:
           #cv2.putText(im_gray,'2',(self.CRT.tr[0],self.CRT.tr[1]), font, 3, (200,255,155), 7, cv2.CV_AA)
           #tl=(68, 68) #600cm=476pix
           #br=(544, 316)#300cm=248
-          gk=1.2605042
-          offs_x=320
-          offs_y=180
+          #gk=1.2605042
+          gk=1.59574468
+          offs_x=256#320
+          offs_y=144#180
           p1=[(self.CRT.tl[0]-offs_x)*gk,(self.CRT.tl[1]-offs_y)*gk,0]
           p2=[(self.CRT.tr[0]-offs_x)*gk,(self.CRT.tr[1]-offs_y)*gk,0]
           p3=[(self.CRT.bl[0]-offs_x)*gk, (self.CRT.bl[1]-offs_y)*gk,0]
@@ -162,33 +181,40 @@ class image_converter:
           MCI=np.mat([p1,p2,p3,p4])
           MCR=np.mat([[-300,150,0],[300,150,0],[-300,-150,0],[300,-150,0]])
           ret_R, ret_t = rigid_transform_3D(MCI, MCR)
-          vec_t=rotationMatrixToEulerAngles(ret_R)
+          vec_r=rotationMatrixToEulerAngles(ret_R)
+          try:
+            #resized_image = cv2.resize(image, (100, 50)) 
+            #self.image_pub.publish(self.bridge.cv2_to_imgmsg(cv2.resize(im_gray, (150, 75)) , "mono8"))
+            self.msg.header.stamp = rospy.Time.now()
+            self.msg.header.frame_id = self.frame_id # i.e. '/odom'
+            self.msg.child_frame_id = self.child_frame_id # i.e. '/base_footprint'
 
+            self.msg.pose.pose.position = Point(ret_t[0,0]/100,ret_t[1,0]/100, vec_r[2])#ret_t[2,0]/100)
+            q = tf.transformations.quaternion_from_euler(0, 0, vec_r[2])
+            self.msg.pose.pose.orientation = Quaternion(*q)
+            # Publish odometry message
+            self.vis_odo_pub.publish(self.msg)
+          except CvBridgeError as e:
+            print(e)
 
-          
-        
-
-        # Advance frame number
         self.frame += 1
-        #print(self.CRT.tl[0])
-        #print(self.CRT.tl[1])
-        #print(self.CRT.tl.shape)
+        
+      # Also publish tf if necessary
+      #if self.publish_odom_tf:
+      #    self.tf_br.sendTransform(pos, ori, msg.header.stamp, msg.child_frame_id, msg.header.frame_id)
+        #publish_odom()
+        #toc = time.time()
+        #print(1000 * (toc - tic))
+        #print(ret_t[0,0],)
+        #print(ret_t[0,0],",",ret_t[1,0],",",vec_r[2]*180/3.1416,",",1000 * (toc - tic))
+        #print(vec_t[2]*180/3.1416)
+        #print(ret_t[0][0],",",ret_t[0][1],",",vec_t[0][2]*180/3.1416)
+        #print(ret_t[0][0],",",ret_t[0][1],",",vec_t[2]*180/3.1416)
+        #print('P',w[1])
+        #print('P',w[2])
         
 
-        try:
-          #resized_image = cv2.resize(image, (100, 50)) 
-          self.image_pub.publish(self.bridge.cv2_to_imgmsg(cv2.resize(im_draw, (150, 75)) , "bgr8"))
-          toc = time.time()
-          #print(1000 * (toc - tic))
-          #print(ret_t[0,0],)
-          print(ret_t[0,0],",",ret_t[1,0],",",vec_t[2]*180/3.1416,",",1000 * (toc - tic))
-          #print(vec_t[2]*180/3.1416)
-          #print(ret_t[0][0],",",ret_t[0][1],",",vec_t[0][2]*180/3.1416)
-          #print(ret_t[0][0],",",ret_t[0][1],",",vec_t[2]*180/3.1416)
-          #print('P',w[1])
-          #print('P',w[2])
-        except CvBridgeError as e:
-          print(e)
+      
     except CvBridgeError as e:
       print(e)
 

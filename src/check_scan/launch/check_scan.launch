@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="check_scan" type="check_scan_node" name="check_scan_ser" output="screen">		  	
+	</node>
+</launch>

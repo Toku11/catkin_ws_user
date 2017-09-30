@@ -76,7 +76,7 @@ void input(const sensor_msgs::ImageConstPtr& msg)//, const sensor_msgs::CameraIn
 }
  if (src11){
 
-	float div=2.5;
+	float div=2;
         /* std::istringstream video_sourceCmd(argv[1]);
          int video_source;
          if(!(video_sourceCmd >> video_source)) return 1;
@@ -144,7 +144,7 @@ void input(const sensor_msgs::ImageConstPtr& msg)//, const sensor_msgs::CameraIn
              /* Try to change SF to see how it affects the result                     */
              /* The undistortion is done on a  plane perpendicular to the camera axis */
              /* --------------------------------------------------------------------  */
-             float sf = 4;
+             float sf = 3;
              create_perspecive_undistortion_LUT( mapx_persp, mapy_persp, &o, sf );
 
              /* --------------------------------------------------------------------*/
@@ -166,6 +166,7 @@ void input(const sensor_msgs::ImageConstPtr& msg)//, const sensor_msgs::CameraIn
              cv::Mat mat_image=cv::cvarrToMat(dst_persp);
 
              //mat_image = mat_image(cv::Rect(0,100,1280,400)); //Recorte de la imagen
+             //mat_image = mat_image(cv::Rect(120,0,300,287)); //Recorte de la imagen
 
              sensor_msgs::ImagePtr msg = cv_bridge::CvImage(src11->header, "mono8", mat_image).toImageMsg();
 
@@ -229,7 +230,7 @@ int main(int argc, char** argv)
   ros::init(argc, argv, "image_converter");
   ros::NodeHandle nh;
   ImageConverter ic(nh);
-  ros::Rate rate(4); //100 Hz, every .01 second
+  ros::Rate rate(1); //100 Hz, every .01 second
   while(ros::ok())
   {
       ros::spinOnce();

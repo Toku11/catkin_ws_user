@@ -1,0 +1,6 @@
+<launch>
+<node pkg="joy" type="joy_node" name="joy_node" output="screen">	
+	</node>
+	<node pkg="heading_follow" type="heading_follow_node" name="heading_follow_node" output="screen">	
+	</node>
+</launch>

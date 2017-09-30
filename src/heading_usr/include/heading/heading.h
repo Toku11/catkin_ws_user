@@ -1,0 +1,31 @@
+#include <ros/ros.h>
+#include <std_msgs/Float32.h>
+#include "serial/serial.h"
+#include <std_msgs/String.h>
+#include <nav_msgs/Odometry.h>
+#include <stdlib.h> 
+
+class heading
+{
+  private:
+     //! The node handle
+    ros::NodeHandle nh_;
+    //! Node handle in the private namespace
+    ros::NodeHandle priv_nh_;
+    ros::Publisher pub_yaw_;
+    ros::Subscriber odometry_sub;
+    std::string serial_port_;
+    int baud_rate_;
+    std::string result;
+    size_t bytes_wrote;
+    serial::Serial my_serial;
+
+  public:
+    
+    heading(ros::NodeHandle nh);
+    ~heading();
+    void init();
+    void getHeading();
+    void ReceiveOdometry(const nav_msgs::Odometry::ConstPtr& msg);
+};
+

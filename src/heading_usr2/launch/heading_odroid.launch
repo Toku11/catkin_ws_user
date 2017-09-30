@@ -1,0 +1,6 @@
+<launch>
+ <node pkg="heading_usr2" type="heading_usr2_node" name="heading_usr_node2" output="screen">
+    <param name="arduino_serial_port" value="/dev/ttyUSB4" />
+    <param name="arduino_baud_rate" value="115200" /> 
+  </node>
+</launch>

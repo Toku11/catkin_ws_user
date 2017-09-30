@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/zargol/catkin_ws_user/src/auto_stop/src/auto_stop.cpp
+/home/fatoks/catkin_ws_user/src/auto_stop/src/auto_stop.cpp
 ros/ros.h
-/home/zargol/catkin_ws_user/src/auto_stop/src/ros/ros.h
+/home/fatoks/catkin_ws_user/src/auto_stop/src/ros/ros.h
 sensor_msgs/LaserScan.h
-/home/zargol/catkin_ws_user/src/auto_stop/src/sensor_msgs/LaserScan.h
+/home/fatoks/catkin_ws_user/src/auto_stop/src/sensor_msgs/LaserScan.h
 std_msgs/Int16.h
 -
 geometry_msgs/Twist.h
@@ -196,6 +196,8 @@ set
 list
 -
 boost/shared_ptr.hpp
+-
+boost/make_shared.hpp
 -
 boost/weak_ptr.hpp
 -

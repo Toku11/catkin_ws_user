@@ -8,8 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
 )
-find_package(Boost REQUIRED COMPONENTS system thread)
-include_directories(... ${Boost_INCLUDE_DIRS})
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 

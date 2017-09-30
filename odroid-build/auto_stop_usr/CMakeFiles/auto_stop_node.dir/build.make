@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/zargol/catkin_ws_user/src/auto_stop
+CMAKE_SOURCE_DIR = /home/fatoks/catkin_ws_user/src/auto_stop
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr
+CMAKE_BINARY_DIR = /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr
 
 # Include any dependencies generated for this target.
 include CMakeFiles/auto_stop_node.dir/depend.make
@@ -50,18 +50,18 @@ include CMakeFiles/auto_stop_node.dir/progress.make
 include CMakeFiles/auto_stop_node.dir/flags.make
 
 CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o: CMakeFiles/auto_stop_node.dir/flags.make
-CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o: /home/zargol/catkin_ws_user/src/auto_stop/src/auto_stop.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles $(CMAKE_PROGRESS_1)
+CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o: /home/fatoks/catkin_ws_user/src/auto_stop/src/auto_stop.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o"
-	/opt/odroid-x2/compiler/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o -c /home/zargol/catkin_ws_user/src/auto_stop/src/auto_stop.cpp
+	/opt/odroid-x2/compiler/bin/arm-linux-gnueabihf-g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o -c /home/fatoks/catkin_ws_user/src/auto_stop/src/auto_stop.cpp
 
 CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.i"
-	/opt/odroid-x2/compiler/bin/arm-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/zargol/catkin_ws_user/src/auto_stop/src/auto_stop.cpp > CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.i
+	/opt/odroid-x2/compiler/bin/arm-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/fatoks/catkin_ws_user/src/auto_stop/src/auto_stop.cpp > CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.i
 
 CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.s"
-	/opt/odroid-x2/compiler/bin/arm-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/zargol/catkin_ws_user/src/auto_stop/src/auto_stop.cpp -o CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.s
+	/opt/odroid-x2/compiler/bin/arm-linux-gnueabihf-g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/fatoks/catkin_ws_user/src/auto_stop/src/auto_stop.cpp -o CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.s
 
 CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o.requires:
 .PHONY : CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o.requires
@@ -79,32 +79,32 @@ auto_stop_node_OBJECTS = \
 # External object files for target auto_stop_node
 auto_stop_node_EXTERNAL_OBJECTS =
 
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: CMakeFiles/auto_stop_node.dir/build.make
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/libroscpp.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libpthread.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_signals.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_filesystem.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/librosconsole.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/librosconsole_log4cxx.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/librosconsole_backend_interface.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/liblog4cxx.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_regex.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/libxmlrpcpp.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/libroscpp_serialization.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/librostime.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_date_time.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/libcpp_common.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_system.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_thread.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libpthread.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libconsole_bridge.so
-/home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: CMakeFiles/auto_stop_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node"
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: CMakeFiles/auto_stop_node.dir/build.make
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/libroscpp.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libpthread.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_signals.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_filesystem.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/librosconsole.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/librosconsole_log4cxx.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/librosconsole_backend_interface.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/liblog4cxx.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_regex.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/libxmlrpcpp.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/libroscpp_serialization.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/librostime.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_date_time.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/opt/ros/indigo/lib/libcpp_common.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_system.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libboost_thread.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libpthread.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: /opt/odroid-x2/sdk/usr/lib/arm-linux-gnueabihf/libconsole_bridge.so
+/home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node: CMakeFiles/auto_stop_node.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable /home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/auto_stop_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/auto_stop_node.dir/build: /home/zargol/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node
+CMakeFiles/auto_stop_node.dir/build: /home/fatoks/catkin_ws_user/odroid-devel/lib/auto_stop_usr/auto_stop_node
 .PHONY : CMakeFiles/auto_stop_node.dir/build
 
 CMakeFiles/auto_stop_node.dir/requires: CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o.requires
@@ -115,6 +115,6 @@ CMakeFiles/auto_stop_node.dir/clean:
 .PHONY : CMakeFiles/auto_stop_node.dir/clean
 
 CMakeFiles/auto_stop_node.dir/depend:
-	cd /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zargol/catkin_ws_user/src/auto_stop /home/zargol/catkin_ws_user/src/auto_stop /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr /home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles/auto_stop_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fatoks/catkin_ws_user/src/auto_stop /home/fatoks/catkin_ws_user/src/auto_stop /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr /home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles/auto_stop_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/auto_stop_node.dir/depend
 

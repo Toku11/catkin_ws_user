@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zargol/catkin_ws_user/src/auto_stop/src/auto_stop.cpp" "/home/zargol/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o"
+  "/home/fatoks/catkin_ws_user/src/auto_stop/src/auto_stop.cpp" "/home/fatoks/catkin_ws_user/odroid-build/auto_stop_usr/CMakeFiles/auto_stop_node.dir/src/auto_stop.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

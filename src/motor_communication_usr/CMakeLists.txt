@@ -11,8 +11,7 @@ find_package(catkin REQUIRED COMPONENTS geometry_msgs roscpp serial std_msgs  )
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
- find_package(Boost REQUIRED COMPONENTS system thread)
-include_directories(... ${Boost_INCLUDE_DIRS})
+ 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
 ## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
@@ -71,19 +70,19 @@ include_directories(include
 
 
 ## Declare a cpp library
-add_library(${PROJECT_NAME} src/motor_communication.cpp)
+add_library(${PROJECT_NAME} src/motor_communication_usr.cpp)
 
 
 ## Declare a cpp executable
 # add_executable(object_node src/object_node.cpp)
-add_executable(motor_communication_node src/motor_communication_node.cpp)
-add_dependencies(motor_communication_node ${PROJECT_NAME})
-target_link_libraries(motor_communication_node ${PROJECT_NAME} ${catkin_LIBRARIES})
+add_executable(motor_communication_usr_node src/motor_communication_usr_node.cpp)
+add_dependencies(motor_communication_usr_node ${PROJECT_NAME})
+target_link_libraries(motor_communication_usr_node ${PROJECT_NAME} ${catkin_LIBRARIES})
 
 
-add_executable(motor_control_node src/motor_control_node.cpp)
-add_dependencies(motor_control_node ${PROJECT_NAME})
-target_link_libraries(motor_control_node ${PROJECT_NAME} ${catkin_LIBRARIES})
+add_executable(motor_control_usr_node src/motor_control_usr_node.cpp)
+add_dependencies(motor_control_usr_node ${PROJECT_NAME})
+target_link_libraries(motor_control_usr_node ${PROJECT_NAME} ${catkin_LIBRARIES})
  
 #############
 ## Install ##
@@ -101,7 +100,7 @@ target_link_libraries(motor_control_node ${PROJECT_NAME} ${catkin_LIBRARIES})
 
 
 ## Mark executables and/or libraries for installation
-install(TARGETS  ${PROJECT_NAME} motor_communication_node motor_control_node
+install(TARGETS  ${PROJECT_NAME} motor_communication_usr_node motor_control_usr_node
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}

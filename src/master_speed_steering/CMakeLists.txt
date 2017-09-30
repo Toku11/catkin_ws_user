@@ -11,8 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   geometry_msgs
 )
-find_package(Boost REQUIRED COMPONENTS system thread)
-include_directories(... ${Boost_INCLUDE_DIRS})
+
 catkin_package(
 	LIBRARIES ${PROJECT_NAME}
     CATKIN_DEPENDS std_msgs sensor_msgs geometry_msgs

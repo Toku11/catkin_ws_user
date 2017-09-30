@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/zargol/catkin_ws_user/odroid-install/setup.sh
+    local-name: /home/fatoks/catkin_ws_user/odroid-install/setup.sh

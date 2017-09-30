@@ -11,20 +11,21 @@ public:
 	object_follow(ros::NodeHandle nh)
 	{
 	    //light_publisher=nh.advertise<std_msgs::String>(nh.resolveName("manual_control/lights"), 10);
-	    //steering_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("manual_control/steering"), 10);
-        //speed_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("manual_control/speed"), 10);
-        steering_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("lane_steering_cmd"), 1);
-        speed_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("lane_speed_cmd"), 1);
+	    steering_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("manual_control/steering"), 1);
+        speed_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("manual_control/speed"), 1);
+        //steering_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("lane_steering_cmd"), 1);
+        //speed_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("lane_speed_cmd"), 1);
 		//subScan_ = nh.subscribe("scan", 1, &object_follow::scanCallback,this);
 	    //head_subscriber = nh.subscribe("model_car/yaw", 1, &object_follow::headCallback,this);
 		//subTwist_ = nh.subscribe("motor_control/twist",1,&object_follow::speedCallback,this); 
+		//subAngle_ = nh.subscribe("/lane_model/angle",1,&object_follow::angleCallback,this);
 		subAngle_ = nh.subscribe("/angle_lane",1,&object_follow::angleCallback,this);
 		//pubEmergencyStop_=nh.advertise<std_msgs::Int16>(nh.resolveName("manual_control/speed"), 1);
 		angle_front=60;
 		angle_back=30;
 		break_distance=0.85;
 		angleint=0;
-		kp=0.7;
+		kp=0.9;
 		kd=0.8;
 		ki=0.00;
 		alfa=0.75;
@@ -41,10 +42,10 @@ public:
 				angleint=0;
 			}
 			if(angle_e==0||(angle_e>0&&angle_e<1)||(angle_e<0&&angle_e>-1)){
-				ctrl_yaw=98;
+				ctrl_yaw=96;
 				}
 			else{
-				ctrl_yaw=98-((kp*angle_e)+(ki*angleint)+(kd*(angle_e-last_angle)));
+				ctrl_yaw=96-((kp*angle_e)+(ki*angleint)+(kd*(angle_e-last_angle)));
 				}
 				last_angle=angle_e;
 				
