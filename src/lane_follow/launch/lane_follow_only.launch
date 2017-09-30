@@ -1,0 +1,5 @@
+<launch>
+ <node pkg="lane_follow" type="lane_follow_node" name="lane_follow_node" output="screen">	
+	</node>
+</launch>
+

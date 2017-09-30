@@ -1,0 +1,8 @@
+<launch>
+<include file="$(find master_speed_steering)/launch/master_speed_steering.launch"/>
+        <include file="$(find lane_detect_python)/launch/lane_detect_launch.launch"/>  
+        <include file="$(find lane_follow)/launch/lane_follow_only.launch"/>
+	
+	<node pkg="parking" type="parking_node" name="parking_node" output="screen">	
+	</node>
+</launch>

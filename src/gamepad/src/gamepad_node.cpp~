@@ -1,0 +1,55 @@
+#include "ros/ros.h"
+#include <std_msgs/String.h>
+#include <std_msgs/Int16.h>
+#include <std_msgs/Float32.h>
+#include "sensor_msgs/LaserScan.h"
+#include <geometry_msgs/Twist.h>
+#include "sensor_msgs/Joy.h"
+#include <ros/ros.h>
+class object_follow
+{
+public:
+	object_follow(ros::NodeHandle nh)
+	{
+	    obstacle_publisher=nh.advertise<std_msgs::String>(nh.resolveName("obstacle_front"),1);
+		subScan_ = nh.subscribe("scan", 1, &object_follow::scanCallback,this);
+
+		angle_front=30;
+
+	}
+	~object_follow(){}
+
+	void speedCallback(const geometry_msgs::Twist& twist)
+	{
+		direction=twist.linear.x;
+	}
+
+	void crossCallback(const std_msgs::Int16& data)
+	{
+
+	}
+	
+	
+private:
+    ros::Subscriber head_subscriber;
+    ros::Publisher light_publisher;
+
+};
+
+int main(int argc, char **argv)
+{
+    ros::init(argc, argv, "gamepad_node");
+    ros::NodeHandle nh; 
+
+    object_follow object_follow_obj(nh);
+    //ros::Rate rate(0.5); //0.5 Hz, every 2 second
+	ros::Rate rate(5); //100 Hz, every .01 second
+	ROS_INFO("trabajando gamepad");	
+	while(ros::ok())
+	{
+		
+		ros::spinOnce();
+		rate.sleep();
+	}
+    return 0;
+}

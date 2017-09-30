@@ -1,0 +1,6 @@
+<launch>
+	<node pkg="joy" type="joy_node" name="joyy_node" output="screen">	
+	</node>
+	<node pkg="gamepad" type="gamepad_node" name="gamepad_node" output="screen">	
+	</node>
+</launch>

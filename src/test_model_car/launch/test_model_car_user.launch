@@ -1,0 +1,12 @@
+<launch>
+	<include file="$(find motor_communication)/launch/motor_odroid.launch"/>
+    <include file="$(find send_steering)/launch/servo_odroid.launch"/>
+    <include file="$(find realsense_camera)/launch/realsense_sr300.launch"/>
+    <!--include file="$(find auto_stop)/launch/auto_stop.launch"/-->
+    <include file="$(find rplidar_ros)/launch/rplidar.launch"/>
+    <include file="$(find light)/launch/light.launch"/>
+<include file="$(find heading)/launch/heading_odroid.launch"/>
+
+	<node pkg="test_model_car" type="test_model_car_node" name="test_model_car" output="screen">
+	</node>
+</launch>

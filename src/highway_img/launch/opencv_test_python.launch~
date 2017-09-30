@@ -1,0 +1,4 @@
+<launch>
+	<node name="opencv_test_python" pkg="opencv_test_python" type="main.py" output="screen">
+	</node>
+</launch>

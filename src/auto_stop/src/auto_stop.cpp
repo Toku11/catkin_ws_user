@@ -80,10 +80,14 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "auto_stop_node");
     ros::NodeHandle nh; 
     auto_stop autoStopObject(nh);
-
+ros::Rate loop_rate(1);
+ROS_INFO("Hola cochesito");
 	while(ros::ok())
 	{
-		ros::spin();
+ROS_INFO("Hola cochesito chingon!");
+
+		ros::spinOnce();
+loop_rate.sleep();
 	}
     return 0;
 }

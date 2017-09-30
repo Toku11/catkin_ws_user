@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="move_lights_car" type="move_lights_node" name="move_lights" output="screen">	
+	</node>
+</launch>

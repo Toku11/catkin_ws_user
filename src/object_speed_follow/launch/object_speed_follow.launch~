@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="object_speed_follow" type="object_speed_follow_node" name="object_speed_follow_node" output="screen">	
+	</node>
+</launch>

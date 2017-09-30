@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="master_speed_steering" type="master_speed_steering_node" name="master_speed_steering_node" output="screen">	
+	</node>
+</launch>

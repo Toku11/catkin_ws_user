@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find lane_detect_python)/launch/lane_detect_launch.launch"/>
+    <include file="$(find object_speed_follow)/launch/object_speed_follow.launch"/>
+    <!--<include file="$(find lane_follow)/launch/test_model.launch"/>-->
+     <node pkg="lane_follow" type="lane_follow_node" name="lane_follow_node" output="screen">	
+     </node>
+
+</launch>
