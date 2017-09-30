@@ -6,7 +6,7 @@ project(heading_usr2)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED roscpp serial std_msgs)
-find_package(serial REQUIRED) 
+find_package(serial REQUIRED)  
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
  

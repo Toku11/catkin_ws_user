@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package>
-  <name>opencv_test_python</name>
+  <name>GPS</name>
   <version>0.0.0</version>
-  <description>The opencv_test_python package</description>
+  <description>The GPS package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="sergio@todo.todo">sergio</maintainer>
+  <maintainer email="sergio@todo.todo">Oscar Tokunaga</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
@@ -41,12 +41,12 @@
   <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>cv_bridge</build_depend>
-  <build_depend>opencv3</build_depend>
+  <!--<build_depend>opencv3</build_depend>-->
   <build_depend>rospy</build_depend>
   <build_depend>sensor_msgs</build_depend>
   <build_depend>std_msgs</build_depend>
   <run_depend>cv_bridge</run_depend>
-  <run_depend>opencv3</run_depend>
+  <!-- <run_depend>opencv3</run_depend>-->
   <run_depend>rospy</run_depend>
   <run_depend>sensor_msgs</run_depend>
   <run_depend>std_msgs</run_depend>

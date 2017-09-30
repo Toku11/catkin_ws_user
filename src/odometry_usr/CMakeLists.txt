@@ -6,7 +6,7 @@ project(odometry_usr)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   nav_msgs
-  roscpp
+  roscpp 
   rospy
   std_msgs
   tf

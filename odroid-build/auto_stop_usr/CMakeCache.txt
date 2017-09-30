@@ -176,8 +176,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 //Path to a program.
 CMAKE_STRIP:FILEPATH=/opt/odroid-x2/compiler/bin/arm-linux-gnueabihf-strip
 
-//The CMake toolchain file
-CMAKE_TOOLCHAIN_FILE:FILEPATH=/home/fatoks/catkin_ws_user/src/Toolchain-arm-linux-gnueabihf.cmake
+//No help, variable specified on the command line.
+CMAKE_TOOLCHAIN_FILE:UNINITIALIZED=/home/fatoks/catkin_ws_user/src/Toolchain-arm-linux-gnueabihf.cmake
 
 //If true, cmake will use relative paths in makefiles and projects.
 CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
