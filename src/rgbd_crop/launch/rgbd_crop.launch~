@@ -1,0 +1,15 @@
+<launch>
+	<arg name="rgb_image" default="/rgb/image_raw"/>
+	<arg name="depth_image" default="/depth/image_raw"/>
+	<arg name="camera_info_raw" default="/rgb/camera_info"/>
+	<arg name="camera_info_depth" default="/depth/camera_info"/>
+
+
+  <node name="rgbd_crop" pkg="rgbd_crop" type="rgbd_crop.py" output="screen">
+ <remap  from="rgb_image" to="$(arg rgb_image)"/>
+<remap  from="depth_image" to="$(arg depth_image)"/>
+<remap  from="camera_info_raw" to="$(arg camera_info_raw)"/>
+<remap  from="camera_info_depth" to="$(arg camera_info_depth)"/>
+  </node>
+
+</launch>
