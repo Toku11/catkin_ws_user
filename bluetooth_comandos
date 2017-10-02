@@ -1,0 +1,7 @@
+sudo rfcomm connect hci0 60:A4:D0:F6:C0:C0 6
+sdptool browse 60:A4:D0:F6:C0:C0
+sudo rfcomm release 0
+hcitool scan
+hcitool dev
+ sudo screen /dev/rfcomm0 115200
+6C:B7:F4:AE:2F:86 ## gti9195

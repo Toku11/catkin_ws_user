@@ -2,7 +2,7 @@
 <package>
   <name>lane_detect_python</name>
   <version>0.0.0</version>
-  <description>The opencv_test_python package</description>
+  <description>The lane_detect_python package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
