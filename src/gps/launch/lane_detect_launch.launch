@@ -1,4 +1,0 @@
-<launch>
-	<node pkg="lane_detect_python" type="main3.py" name="lane_detect_python" output="screen">	
-	</node>
-</launch>

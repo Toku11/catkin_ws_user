@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="lane_detect_python" type="main_actualizado2.py" name="lane_detect_python" output="screen">	
+	</node>
+</launch>
