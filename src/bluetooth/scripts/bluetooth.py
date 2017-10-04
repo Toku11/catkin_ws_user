@@ -27,9 +27,9 @@ class bluetooth:
 
     def __init__(self):
         self.tf_broadcast = tf.TransformBroadcaster()
-        self.pub_imu = rospy.Publisher('imu/data', Imu, queue_size=1)
+        self.pub_imu = rospy.Publisher('imu/data',Imu, queue_size=1)
         self.pub_navsatfix = rospy.Publisher('navsat/fix',NavSatFix,queue_size=1)
-        self.pub_mag = rospy.Publisher('mag/data', MagneticField, queue_size=1)
+        self.pub_mag = rospy.Publisher('mag/data',MagneticField, queue_size=1)
 
 
     def code(self):
@@ -37,13 +37,14 @@ class bluetooth:
         acc_l=False
         gyro=False
         orien=False
+        quat=Quaternion()
         imuMsg=Imu()
         gpsMsg=NavSatFix()
         magMsg=MagneticField()
         #rate = rospy.Rate(1000)
         last=rospy.Time.now().to_sec()
-        imuMsg.orientation_covariance = [999999 , 0 , 0,0, 9999999, 0,0, 0, 999999]
-        imuMsg.angular_velocity_covariance = [9999, 0 , 0,0 , 99999, 0,0, 0 , 0.02]
+        imuMsg.orientation_covariance = [0 , 0 , 0,0, 0, 0,0, 0, 0]
+        imuMsg.angular_velocity_covariance = [0, 0 , 0,0 , 0, 0,0, 0 , 0.02]
         imuMsg.linear_acceleration_covariance = [0.2 , 0 , 0,0 , 0.2, 0,0 , 0 , 0.2]
         gpsMsg.position_covariance = [0,0,0,0,0,0,0,0,0]
         while not rospy.is_shutdown():
@@ -76,14 +77,17 @@ class bluetooth:
                     yaw=-xx+90#*3.14159/180
                     if yaw <-180:
                         yaw=yaw+360
-		    q=tf.transformations.quaternion_from_euler(roll*3.14159/180,pitch*3.18159/180,yaw*3.14159/180)
-                    imuMsg.orientation = Quaternion(*q) #magnetometer
-
-                    
-                    #imuMsg.orientation.x = q[0] #magnetometer
-                    #imuMsg.orientation.y = q[1]
-                    #imuMsg.orientation.z = q[2]
-                    #imuMsg.orientation.w = q[3]
+                    #q=tf.transformations.quaternion_from_euler(roll*3.14159/180,pitch*3.18159/180,yaw*3.14159/180)
+                    #imuMsg.orientation = Quaternion(*q)
+                    imuMsg.orientation.x = roll #magnetometer
+                    imuMsg.orientation.y = pitch
+                    imuMsg.orientation.z = yaw
+                    imuMsg.orientation.w = 0
+                    #q=tf.transformations.quaternion_from_euler(zz*3.14159/180,yy*3.18159/180,xx*3.14159/180)'''
+                    #quat.x = q[0] #magnetometer
+                    #quat.y = q[1]
+                    #quat.z = q[2]
+                    #quat.w = q[3]
                 elif tipo==4:   #GYROSCOPE (rad/sec - X,Y,Z)
                     gyro=True
                     imuMsg.angular_velocity.x = xx #gyro
@@ -123,7 +127,7 @@ class bluetooth:
                 elif tipo==98:#GPS1 (Lat., Long., Alt.)
                     gps1=True
                     gpsMsg.header.stamp=rospy.Time.now()
-                    gpsMsg.header.frame_id='map_frame'
+                    gpsMsg.header.frame_id='base_link'
                     gpsMsg.latitude = xx
                     gpsMsg.longitude = yy
                     gpsMsg.altitude = zz
@@ -136,7 +140,8 @@ class bluetooth:
                 #print('tipo=',tipo,'x=',xx,'y=',yy,'z=',zz,rospy.Time.now().to_sec()-last)
                 #rate.sleep()
                 ## until the msg is complete
-            if acc_l==True and gyro==True and orien==True:
+            if orien==True and acc_l==True and gyro==True:
+
                 imuMsg.header.stamp=rospy.Time.now()
                 imuMsg.header.frame_id='base_link'
                 self.pub_imu.publish(imuMsg)

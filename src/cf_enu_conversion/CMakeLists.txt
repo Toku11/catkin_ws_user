@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(gps)
+project(cf_enu_conversion)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   sensor_msgs
   std_msgs
+geometry_msgs
 )
 
 ## System dependencies are found with CMake's conventions

@@ -1,0 +1,34 @@
+<launch>    
+    
+    <node pkg="odometry_usr" type="odometry_usr_node" name="odometry_usr_node" output="screen">
+
+		<!--<param name="posx"		type="double" 		value="" />
+	  	<param name="posy"		type="double" 		value="35"/>		
+	  	<param name="angle"		type="double"		value="90"/>-->
+
+
+		<param name="posx"		type="double" 		value="1.05" />
+	  	<param name="posy"		type="double" 		value="5.39"/>		
+	  	<param name="angle"		type="double"		value="87"/>
+
+		<!--<param name="posx"		type="double" 		value="-3.54" />
+	  	<param name="posy"		type="double" 		value="0"/>		
+	  	<param name="angle"		type="double"		value="177"/>-->
+
+
+		<!--<param name="posx"		type="double" 		value="-5.45" />
+	  	<param name="posy"		type="double" 		value="1.05"/>		
+	  	<param name="angle"		type="double"		value="-93"/>-->
+
+		<!--<param name="posx"		type="double" 		value="3.28" />
+	  	<param name="posy"		type="double" 		value="0"/>		
+	  	<param name="angle"		type="double"		value="0"/>-->
+
+		<!--<param name="posx"		type="double" 		value="3.28" />
+	  	<param name="posy"		type="double" 		value="0"/>		
+	  	<param name="angle"		type="double"		value="0"/>-->
+
+
+
+    </node>
+</launch>
