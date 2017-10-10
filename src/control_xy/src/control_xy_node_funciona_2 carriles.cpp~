@@ -18,20 +18,22 @@ public:
 	    //light_publisher=nh.advertise<std_msgs::String>(nh.resolveName("manual_control/lights"), 10);
 	    steering_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("manual_control/steering"), 10);
         speed_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("manual_control/speed"), 10);
-	    head_subscriber = nh.subscribe("model_car/yaw2", 1, &test_head::headCallback,this);
+	    head_subscriber = nh.subscribe("model_car/yaw", 1, &test_head::headCallback,this);
 		subTwist_ = nh.subscribe("motor_control/twist",1,&test_head::speedCallback,this); 
 		odometry_sub = nh.subscribe("odom",1,&test_head::ReceiveOdometry,this);
 		joy_subscriber = nh.subscribe("joy", 5, &test_head::joyCallback,this);
-		//speed_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("manual_control/speed"), 10);
+		speed_publisher=nh.advertise<std_msgs::Int16>(nh.resolveName("manual_control/speed"), 10);
 		start_tray=false;
 		sp_yaw=90;
 		ca=0;
 		ruta_learn=false;
 		loaded_route=false;
-		n_aux=30000;
+		n_aux=3000;
 		k_idx=0;
 		px_aux=1000000000000;
 		py_aux=1000000000000;
+		carril=0;//0 externo 1 interno
+		velocity=0;
 
 	}
 	~test_head(){}
@@ -57,11 +59,18 @@ public:
 			printf("Ruta no cargada aun\n");
 			loadRoute();
 		}else if(ruta_learn==false&&loaded_route==true&&start_tray==true){
+
+
 			std_msgs::Int16 speed;
 			count2++;
 			//calculamos error de heading
-			spx=sp_rx[k_idx];
-			spy=sp_ry[k_idx];
+			if(carril==0){
+				spx=sp_rx[k_idx];
+				spy=sp_ry[k_idx];
+		    } else{
+		    	spx=sp_rx2[k_idx];
+				spy=sp_ry2[k_idx];
+		    }
 	        err_x=spx-px;
 	        err_y=spy-py;
 
@@ -75,7 +84,7 @@ public:
 				spy=sp_ry[k_idx];
 	        	err_x=spx-px;
 	        	err_y=spy-py;
-	        	ROS_INFO("Next SP %d, sp%f,%f, p%f,%f, e%f,%f", k_idx,spx,spy,px,py,err_x,err_y);	
+	        	//ROS_INFO("Next SP %d, sp%f,%f, p%f,%f, e%f,%f", k_idx,spx,spy,px,py,err_x,err_y);	
 			}
 	        //sp_yaw=atan2(err_y,err_x)*180/3.1416;
 	        sp_yaw=-atan2(err_x,err_y)*180/3.1416;
@@ -104,9 +113,9 @@ public:
 				 }else if(ctrl_yaw<1){
 				 	ctrl_yaw=1; 
 				 }
-			if(count2%2==0){
+			if(count2%4==0){
 				//ROS_INFO("%f,%f",px,py);	 
-				ROS_INFO("%f,%f",error_yaw,sp_yaw);	 
+			//	ROS_INFO("%f,%f",error_yaw,sp_yaw);	 
 				steering_command.data=(int)ctrl_yaw;
 				steering_publisher.publish(steering_command);	
 			}
@@ -120,8 +129,8 @@ public:
     	    filter_yaw=msg->twist.twist.linear.y;
     	    if (ruta_learn==true){
     	    	norm=sqrt((px-px_aux)*(px-px_aux)+(py-py_aux)*(py-py_aux));
-    	    	if (norm>0.87){
-    	    		fprintf(fp, "%f %f\n",px,py );
+    	    	if (norm>0.85){//0.87){
+    	    		fprintf(fp, "%f %f %f %f \n",px,py,px*0.8,py*0.8 );//ambos carriles mas una bandera
     	    		px_aux=px;
     	    		py_aux=py;
     	    		ROS_INFO("NP %f,%f",px,py);	 
@@ -145,9 +154,11 @@ public:
        			 	break;
        			 }
         			
-        			sscanf(mystring,"%s %s",&rx,&ry);
+        			sscanf(mystring,"%s %s %s %s",&rx,&ry,&rx2,&ry2);
         			sp_rx[h]=atof(rx);
         			sp_ry[h]=atof(ry);
+        			sp_rx2[h]=atof(rx2);
+        			sp_ry2[h]=atof(ry2);
         			
         			//printf("%3d: %s", h, mystring);
         			printf("R %f,%f \n",sp_rx[h],sp_ry[h]);
@@ -196,14 +207,35 @@ public:
 
 		}else if(joy->buttons[6]==1){
         	start_tray=true;
-        	speed.data=-1100;
+        	velocity=-500;
+        	speed.data=velocity;
         	speed_publisher.publish(speed);
         	
         }else if(joy->buttons[7]==1){
 			start_tray=false;
+			velocity=0;
 			speed.data=0;
         	speed_publisher.publish(speed);
+		}else if(joy->buttons[2]==1){
+			carril=0;//externo
+			k_idx+=1;//avanzamos uno extra en setpoint
+		}else if(joy->buttons[0]==1){
+			carril=1;//carril interno
+			k_idx+=1;//avanzamos uno extra en sp
+		}else if(joy->buttons[1]==1){
+			velocity+=100;
+			ROS_INFO("vel %d", velocity);
+			speed.data=velocity;
+        	speed_publisher.publish(speed);
+		}else if(joy->buttons[3]==1){
+
+			velocity-=100;
+			ROS_INFO("vel %d", velocity);	
+			speed.data=velocity;
+        	speed_publisher.publish(speed);
 		}
+
+
 		if(ruta_learn==true){
 
 			std_msgs::Int16 speed;
@@ -235,8 +267,8 @@ private:
 	float sp_yaw;
 	float ctrl_yaw;
 	float px,py,norm,norm2,x_ini,y_ini,x_p,y_p,px2,py2,spx,spy,err_x,err_y,err_xx,err_yy;
-	char rx[80],ry[80];
-	float sp_rx[1000],sp_ry[1000];
+	char rx[80],ry[80],rx2[80],ry2[80];
+	float sp_rx[1000],sp_ry[1000],sp_rx2[1000],sp_ry2[1000];
 	bool start_tray;
 	int count,count2;
 	bool loaded_route;
@@ -247,6 +279,8 @@ private:
 	int num_sp;
 	int k_idx;
 	float n_aux;
+	int carril;
+	int velocity;
 
 };
 

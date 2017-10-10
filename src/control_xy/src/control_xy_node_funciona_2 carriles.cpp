@@ -28,7 +28,7 @@ public:
 		ca=0;
 		ruta_learn=false;
 		loaded_route=false;
-		n_aux=3000;
+		n_aux=30000;
 		k_idx=0;
 		px_aux=1000000000000;
 		py_aux=1000000000000;

@@ -3,10 +3,10 @@
   
 int main(int argc, char **argv) 
 {
-  ros::init(argc, argv, "motor_communication_usr_node");
+  ros::init(argc, argv, "motor_communication_node");
   ros::NodeHandle nh;
   ros::Rate loop(100);
-  motor_communication_usr node;
+  motor_communication node;
   ros::spinOnce();  
   node.init();
   while(ros::ok())

@@ -43,9 +43,8 @@ void heading::init()
 }
 
 void heading::ReceiveOdometry(const nav_msgs::Odometry::ConstPtr& msg){
-        tf::Quaternion q=msg->pose.pose.orientation();
 	double roll, pitch, yaw;
-	yaw=q.z;
+	yaw=msg->pose.pose.orientation.z;
 	//tf::Matrix3x3 m(q);
 	//double roll, pitch, yaw;
     	//m.getRPY(roll, pitch, yaw);
