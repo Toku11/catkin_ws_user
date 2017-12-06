@@ -14,7 +14,7 @@ The next codes were used for the indoors navigation
 - control_xy         (C++).
 
 For the outdoor navigation a Smartphone was used with an APP designed in APPInventor, however any application that sends magnetometer and GPS values through bluetooth works fine.
-The next codes wer used for the indoors navigation are:
+The next codes were used for the indoors navigation:
 
 - cf_enu_conversion   (Python).
 - bluetooth (Pyhton).
