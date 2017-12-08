@@ -23,7 +23,7 @@ The next codes were used for the indoors navigation:
 
 Originally ROS Indigo was used (master branch) but exist the ROS Kinect version. Wait for it!
 
-**The instructions for use is in development**
+**The instructions for use are in development**
 
 ## Contact:
 If you need more info about the code, please contact:
